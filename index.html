@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <body>
-            <h1>Deep Link Example</h1>
-            <a href=”https://onliner.by”>Click this link! You will redirect to app</a>
-        </body>
-    </head>
+<head>
+<body>
+<h1>Deep Link Example</h1>
+<a href="https://onliner.by">Click this link! You will redirect to app</a>
+
+<a id="myLink" href="javascript:MyFunction();">link text</a>
+
+<button onclick="NewTab()">
+    Open Geeksforgeeks
+</button>
+
+<script>
+        function NewTab() {
+            window.open(
+            "https://onliner.by", "_blank");
+        }
+
+</script>
+</body>
+</head>
 </html>
