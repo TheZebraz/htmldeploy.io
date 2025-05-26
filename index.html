@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<body>
-<h1>Deep Link Example</h1>
-<a href="app://ms8s.test-app.link/gotoapp">Go to Stage2 or Prerod App</a>
-<a href="app://links.gem4me.com/gotoapp">Go to Prod App</a>
-</body>
-</head>
+    <head>
+        <title>Deep Link Example</title>
+    </head>
+    <body>
+        <h1>Deep Link Example</h1>
+        <a href="app://ms8s.test-app.link/gotoapp">Go to Stage2 or Prerod App</a>
+        <a href="app://links.gem4me.com/gotoapp">Go to Prod App</a>        
+        <br><br>
+
+        <button onclick="makeRequest()">Do fetch</button>
+        
+        <p id="response"></p> 
+
+        <script>
+            function makeRequest() {
+                fetch('https://jsonplaceholder.typicode.com/todos/1')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+                    })
+                    .catch(error => {
+                        document.getElementById('response').innerText = 'Error: ' + error;
+                    });
+            }
+        </script>
+    </body>
 </html>
